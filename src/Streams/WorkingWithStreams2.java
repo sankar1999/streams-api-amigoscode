@@ -54,5 +54,6 @@ public class WorkingWithStreams2 {
                 })
                 .collect(Collectors.toList());
         employeeTrans.forEach(System.out::println);
+//        System.out.println(System.nanoTime());
     }
 }
