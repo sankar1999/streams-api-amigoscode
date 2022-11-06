@@ -43,11 +43,16 @@ public class WorkingWithStreams2 {
                 .filter(employee -> employee.getName().equals("Justin"))
                 .collect(Collectors.toList());
         filterEmployee.forEach(System.out::println);
-        
+
         // Transformation
-
-
-
-
+        System.out.println("Transformation...");
+        List<EmployeeTransformations> employeeTrans = employees.stream()
+                .map(employee -> {
+                    EmployeeTransformations employeeTransformations = new EmployeeTransformations(
+                            employee.getId(), employee.getName(), employee.getAge());
+                    return employeeTransformations;
+                })
+                .collect(Collectors.toList());
+        employeeTrans.forEach(System.out::println);
     }
 }
